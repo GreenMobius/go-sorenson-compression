@@ -45,8 +45,10 @@ func RunCommand() {
 		if *compressOutFile == "" {
 			*compressOutFile = strings.Trim(inputFile, filepath.Ext(inputFile)) + ".sor"
 		}
-		log.Println("Sorensen compression!")
-		log.Printf("  outfile: %s", *compressOutFile)
+		if err := runCompression(inputFile, *compressOutFile); err != nil {
+			log.Println(err)
+			os.Exit(1)
+		}
 	case "decompress":
 		if *decompressOutFile == "" {
 			*decompressOutFile = strings.Trim(inputFile, filepath.Ext(inputFile)) + ".sor"
