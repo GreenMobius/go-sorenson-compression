@@ -15,9 +15,9 @@ func runCompression(inputFilePath string, outputFilePath string) error {
 	}
 	defer inFile.Close()
 
-	outFile, err := os.Open(outputFilePath)
+	outFile, err := os.Create(outputFilePath)
 	if err != nil {
-		return fmt.Errorf("opening output file: %w", err)
+		return fmt.Errorf("creating output file: %w", err)
 	}
 	defer outFile.Close()
 
