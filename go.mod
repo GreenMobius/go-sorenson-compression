@@ -1,3 +1,3 @@
-module github.com/GreenMobius/go-sorenson-compression
+module github.com/GreenMobius/sorensen
 
 go 1.17
