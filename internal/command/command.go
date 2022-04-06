@@ -34,7 +34,7 @@ func RunCommand() {
 	args := os.Args
 	if len(args) < 3 {
 		log.Println(usage)
-		return
+		os.Exit(1)
 	}
 
 	command := os.Args[1]
